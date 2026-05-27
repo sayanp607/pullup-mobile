@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "136966426864",
+    "project_id": "pullup-ca713",
+    "storage_bucket": "pullup-ca713.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136966426864:android:79169abc44ceed603cf235",
+        "android_client_info": {
+          "package_name": "com.pullupmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136966426864-aaku7l2g2ene4q6ifj5pq4uitbkau2f3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pullupmobile",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "136966426864-ch20c88agbhnuodm0evkat0koho55ab4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANw1EO51pm1qC0Kyr3GKN1bMnjUS2jJnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136966426864-ch20c88agbhnuodm0evkat0koho55ab4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

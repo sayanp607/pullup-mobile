@@ -1,0 +1,17 @@
+import { AppRegistry, View, Text } from 'react-native';
+import { name as appName } from './app.json';
+
+console.log('--- INDEX.JS BOOTSTRAP START ---');
+
+const SimpleApp = () => {
+  console.log('--- SIMPLE APP RENDER ---');
+  return (
+    <View style={{ flex: 1, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center' }}>
+      <Text style={{ fontSize: 30, color: 'white' }}>BLUE SCREEN OF LIFE</Text>
+    </View>
+  );
+};
+
+console.log('REGISTERING:', appName);
+AppRegistry.registerComponent(appName, () => SimpleApp);
+console.log('--- COMPONENT REGISTERED ---');

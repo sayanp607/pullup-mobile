@@ -1,0 +1,84 @@
+/**
+ * Pullup App Entry Point
+ */
+
+import React, { useState } from 'react';
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+} from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+
+import LoginScreen from './src/screens/LoginScreen';
+import SignupScreen from './src/screens/SignupScreen';
+import MainTabNavigator from './src/navigation/MainTabNavigator';
+import { Colors } from './src/theme/colors';
+import { User } from './src/types';
+
+function App(): React.JSX.Element {
+  const [user, setUser] = useState<User | null>(null);
+  console.log('APP COMPONENT RENDERING [USER IS LOGGED IN:', !!user, ']');
+  const [authView, setAuthView] = useState<'login' | 'signup'>('login');
+  const [signupInitialData, setSignupInitialData] = useState<any>(null);
+
+  const handleLogin = (userData: User) => {
+    setUser(userData);
+  };
+
+  const handleSignup = (userData: User) => {
+    setUser(userData);
+  };
+
+  const navigateToSignup = (data?: any) => {
+    setSignupInitialData(data);
+    setAuthView('signup');
+  };
+
+  const navigateToLogin = () => {
+    setAuthView('login');
+  };
+
+  // Logged in state - SHOW THE MAIN TAB NAVIGATOR
+  if (user) {
+    return (
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <StatusBar barStyle="light-content" backgroundColor={Colors.background} />
+          <MainTabNavigator user={user} />
+        </NavigationContainer>
+      </SafeAreaProvider>
+    );
+  }
+
+  // Show auth screens
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor={Colors.background} />
+        {authView === 'login' ? (
+          <LoginScreen
+            onLogin={handleLogin}
+            onNavigateToSignup={navigateToSignup}
+          />
+        ) : (
+          <SignupScreen
+            initialData={signupInitialData}
+            onSignup={handleSignup}
+            onNavigateToLogin={navigateToLogin}
+          />
+        )}
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.background,
+  },
+});
+
+export default App;
