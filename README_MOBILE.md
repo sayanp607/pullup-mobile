@@ -1,4 +1,4 @@
-# PULLUP MOBILE APP - React Native (SAYAN)
+# PULLUP MOBILE APP - React Native (CLI)
 
 A React Native mobile application for the Pullup party discovery and social networking platform. Built using React Native CLI for maximum customization and native capabilities.
 
